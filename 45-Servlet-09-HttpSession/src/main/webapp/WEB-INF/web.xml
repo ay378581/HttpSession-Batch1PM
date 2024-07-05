@@ -3,5 +3,46 @@
  "http://java.sun.com/dtd/web-app_2_3.dtd" >
 
 <web-app>
-  <display-name>Archetype Created Web Application</display-name>
+	<display-name>Archetype Created Web Application</display-name>
+	<filter>
+		<filter-name>UserRegisterFilter</filter-name>
+		<display-name>UserRegisterFilter</display-name>
+		<description></description>
+		<filter-class>com.ay.filter.UserRegisterFilter</filter-class>
+	</filter>
+	<filter>
+		<filter-name>UserLoginFilter</filter-name>
+		<display-name>UserLoginFilter</display-name>
+		<description></description>
+		<filter-class>com.ay.filter.UserLoginFilter</filter-class>
+	</filter>
+	<filter-mapping>
+		<filter-name>UserRegisterFilter</filter-name>
+		<url-pattern>/uReg</url-pattern>
+	</filter-mapping>
+	<filter-mapping>
+		<filter-name>UserLoginFilter</filter-name>
+		<url-pattern>/uLogin</url-pattern>
+	</filter-mapping>
+	<servlet>
+		<servlet-name>UserLoginServlet</servlet-name>
+		<display-name>UserLoginServlet</display-name>
+		<description></description>
+		<servlet-class>com.ay.servlets.UserLoginServlet</servlet-class>
+	</servlet>
+	<servlet>
+		<servlet-name>UserRegisterServlet</servlet-name>
+		<display-name>UserRegisterServlet</display-name>
+		<description></description>
+		<servlet-class>com.ay.servlets.UserRegisterServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>UserLoginServlet</servlet-name>
+		<url-pattern>/uLogin</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>UserRegisterServlet</servlet-name>
+		<url-pattern>/uReg</url-pattern>
+	</servlet-mapping>
+
 </web-app>
